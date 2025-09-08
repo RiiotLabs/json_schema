@@ -1,0 +1,210 @@
+{
+  "@@locale": "en",
+  "exclusiveMaximumExceeded": "exclusiveMaximum exceeded ({n} >= {exclusiveMaximum})",
+  "@exclusiveMaximumExceeded": {
+    "placeholders": {
+      "n": {},
+      "exclusiveMaximum": {}
+    }
+  },
+  "exclusiveMinimumViolated": "exclusiveMinimum violated ({n} <= {exclusiveMinimum})",
+  "@exclusiveMinimumViolated": {
+    "placeholders": {
+      "n": {},
+      "exclusiveMinimum": {}
+    }
+  },
+  "maximumExceeded": "maximum exceeded ({n} > {maximum})",
+  "@maximumExceeded": {
+    "placeholders": {
+      "n": {},
+      "maximum": {}
+    }
+  },
+  "minimumViolated": "minimum violated ({n} < {minimum})",
+  "@minimumViolated": {
+    "placeholders": {
+      "n": {},
+      "minimum": {}
+    }
+  },
+  "multipleOfViolated": "multipleOf violated ({n} % {multipleOf})",
+  "@multipleOfViolated": {
+    "placeholders": {
+      "n": {},
+      "multipleOf": {}
+    }
+  },
+  "typeMissmatch": "type: wanted {typeList} got {instance}",
+  "@typeMissmatch": {
+    "placeholders": {
+      "typeList": {},
+      "instance": {}
+    }
+  },
+  "constViolated": "const violated {instance}",
+  "@constViolated": {
+    "placeholders": {
+      "instance": {}
+    }
+  },
+  "enumViolated": "enum violated {instance}",
+  "@enumViolated": {
+    "placeholders": {
+      "instance": {}
+    }
+  },
+  "maxLengthExceeded": "maxLength exceeded ({instance} vs {maxLength})",
+  "@maxLengthExceeded": {
+    "placeholders": {
+      "instance": {},
+      "maxLength": {}
+    }
+  },
+  "minLengthViolated": "minLength violated ({instance} vs {minLength})",
+  "@minLengthViolated": {
+    "placeholders": {
+      "instance": {},
+      "minLength": {}
+    }
+  },
+  "patternViolated": "pattern violated ({instance} vs {pattern})",
+  "@patternViolated": {
+    "placeholders": {
+      "instance": {},
+      "pattern": {}
+    }
+  },
+  "maxItemsExceeded": "maxItems exceeded ({actual} vs {maxItems})",
+  "@maxItemsExceeded": {
+    "placeholders": {
+      "actual": {},
+      "maxItems": {}
+    }
+  },
+  "minItemsViolated": "minItems violated ({actual} vs {minItems})",
+  "@minItemsViolated": {
+    "placeholders": {
+      "actual": {},
+      "minItems": {}
+    }
+  },
+  "uniqueItemsViolated": "uniqueItems violated: {instance} [{i}]==[{j}]",
+  "@uniqueItemsViolated": {
+    "placeholders": {
+      "instance": {},
+      "i": {},
+      "j": {}
+    }
+  },
+  "minContainsViolated": "minContains violated: {instance}",
+  "@minContainsViolated": {
+    "placeholders": {
+      "instance": {}
+    }
+  },
+  "maxContainsViolated": "maxContains violated: {instance}",
+  "@maxContainsViolated": {
+    "placeholders": {
+      "instance": {}
+    }
+  },
+  "containsViolated": "contains violated: {instance}",
+  "@containsViolated": {
+    "placeholders": {
+      "instance": {}
+    }
+  },
+  "additionalItemsFalse": "additionalItems false",
+  "unevaluatedItemsFalse": "unevaluatedItems false",
+  "allOfViolated": "{schemaPath}: allOf violated {instance}",
+  "@allOfViolated": {
+    "placeholders": {
+      "schemaPath": {},
+      "instance": {}
+    }
+  },
+  "anyOfViolated": "{schemaPath}/anyOf: anyOf violated ({instance}, {anyOfSchemas})",
+  "@anyOfViolated": {
+    "placeholders": {
+      "schemaPath": {},
+      "instance": {},
+      "anyOfSchemas": {}
+    }
+  },
+  "oneOfViolated": "{schemaPath}/oneOf: violated {notOneOfMessage}",
+  "@oneOfViolated": {
+    "placeholders": {
+      "schemaPath": {},
+      "notOneOfMessage": {}
+    }
+  },
+  "notViolated": "{notSchemaPath}: not violated",
+  "@notViolated": {
+    "placeholders": {
+      "notSchemaPath": {}
+    }
+  },
+  "unallowedAdditionalProperty": "unallowed additional property {key}",
+  "@unallowedAdditionalProperty": {
+    "placeholders": {
+      "key": {}
+    }
+  },
+  "propertyDependenciesRequired": "prop {key} => {dependencies} required",
+  "@propertyDependenciesRequired": {
+    "placeholders": {
+      "key": {},
+      "dependencies": {}
+    }
+  },
+  "schemaDependencyViolated": "prop {key} violated schema dependency",
+  "@schemaDependencyViolated": {
+    "placeholders": {
+      "key": {}
+    }
+  },
+  "minPropertiesViolated": "minProperties violated ({numProps} < {minProps})",
+  "@minPropertiesViolated": {
+    "placeholders": {
+      "numProps": {},
+      "minProps": {}
+    }
+  },
+  "maxPropertiesViolated": "maxProperties violated ({numProps} > {maxProps})",
+  "@maxPropertiesViolated": {
+    "placeholders": {
+      "numProps": {},
+      "maxProps": {}
+    }
+  },
+  "requiredPropertyMissing": "required prop missing: {prop} from {instance}",
+  "@requiredPropertyMissing": {
+    "placeholders": {
+      "prop": {},
+      "instance": {}
+    }
+  },
+  "schemaBooleanFalse": "schema is a boolean == false, this schema will never validate. Instance: {instance}",
+  "@schemaBooleanFalse": {
+    "placeholders": {
+      "instance": {}
+    }
+  },
+  "thenViolated": "{schemaPath}/then: then violated ({instance}, {thenSchema})",
+  "@thenViolated": {
+    "placeholders": {
+      "schemaPath": {},
+      "instance": {},
+      "thenSchema": {}
+    }
+  },
+  "elseViolated": "{schemaPath}/else: else violated ({instance}, {elseSchema})",
+  "@elseViolated": {
+    "placeholders": {
+      "schemaPath": {},
+      "instance": {},
+      "elseSchema": {}
+    }
+  }
+}
