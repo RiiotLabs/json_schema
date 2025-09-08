@@ -1,10 +1,9 @@
 import '../../json_schema.dart';
 import '../json_schema/models/instance.dart';
-import '../json_schema/validator_messages.dart';
 import 'generated/localizations.dart';
 
 class TranslatedMessages implements ValidatorMessages {
-  final AppLocalizations localizations;
+  final JsonSchemaLocalizations localizations;
 
   TranslatedMessages(this.localizations);
 

@@ -62,6 +62,8 @@ import 'package:json_schema/src/json_schema/schema_url_client/stub_schema_url_cl
     if (dart.library.html) 'package:json_schema/src/json_schema/schema_url_client/html_schema_url_client.dart'
     if (dart.library.io) 'package:json_schema/src/json_schema/schema_url_client/io_schema_url_client.dart';
 
+import 'validator_messages.dart';
+
 class RetrievalRequest {
   Uri? schemaUri;
   late AsyncRetrievalOperation asyncRetrievalOperation;
@@ -1998,13 +2000,13 @@ class JsonSchema {
   bool get requiredOnParent => _parent?.propertyRequired(propertyName) ?? false;
 
   @Deprecated('4.0, to be removed in 5.0, use validate() instead.')
-  ValidationResults validateWithResults(dynamic instance, {bool parseJson = false, bool? validateFormats}) =>
-      Validator(this)
+  ValidationResults validateWithResults(dynamic instance, {bool parseJson = false, bool? validateFormats, ValidatorMessages? messages}) =>
+      Validator(this, messages: messages)
           .validate(instance, reportMultipleErrors: true, parseJson: parseJson, validateFormats: validateFormats);
 
   /// Validate [instance] against this schema, returning the result
   /// with information about any validation errors or warnings that occurred.
-  ValidationResults validate(dynamic instance, {bool parseJson = false, bool? validateFormats}) => Validator(this)
+  ValidationResults validate(dynamic instance, {bool parseJson = false, bool? validateFormats, ValidatorMessages? messages}) => Validator(this, messages: messages)
       .validate(instance, reportMultipleErrors: true, parseJson: parseJson, validateFormats: validateFormats);
 
   // --------------------------------------------------------------------------

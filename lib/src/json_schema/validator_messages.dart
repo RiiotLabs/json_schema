@@ -2,7 +2,7 @@ import 'models/instance.dart' show Instance;
 import 'models/schema_type.dart';
 
 class ValidatorMessages {
-  static const defaultMessages = ValidatorMessages._();
+  static const englishMessages = ValidatorMessages._();
 
   const ValidatorMessages._();
 

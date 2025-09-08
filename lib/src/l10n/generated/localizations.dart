@@ -9,10 +9,10 @@ import 'localizations_en.dart';
 
 // ignore_for_file: type=lint
 
-/// Callers can lookup localized strings with an instance of AppLocalizations
-/// returned by `AppLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of JsonSchemaLocalizations
+/// returned by `JsonSchemaLocalizations.of(context)`.
 ///
-/// Applications need to include `AppLocalizations.delegate()` in their app's
+/// Applications need to include `JsonSchemaLocalizations.delegate()` in their app's
 /// `localizationDelegates` list, and the locales they support in the app's
 /// `supportedLocales` list. For example:
 ///
@@ -20,8 +20,8 @@ import 'localizations_en.dart';
 /// import 'generated/localizations.dart';
 ///
 /// return MaterialApp(
-///   localizationsDelegates: AppLocalizations.localizationsDelegates,
-///   supportedLocales: AppLocalizations.supportedLocales,
+///   localizationsDelegates: JsonSchemaLocalizations.localizationsDelegates,
+///   supportedLocales: JsonSchemaLocalizations.supportedLocales,
 ///   home: MyApplicationHome(),
 /// );
 /// ```
@@ -58,20 +58,21 @@ import 'localizations_en.dart';
 /// Select and expand the newly-created Localizations item then, for each
 /// locale your application supports, add a new item and select the locale
 /// you wish to add from the pop-up menu in the Value field. This list should
-/// be consistent with the languages listed in the AppLocalizations.supportedLocales
+/// be consistent with the languages listed in the JsonSchemaLocalizations.supportedLocales
 /// property.
-abstract class AppLocalizations {
-  AppLocalizations(String locale)
+abstract class JsonSchemaLocalizations {
+  JsonSchemaLocalizations(String locale)
       : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
-  static AppLocalizations of(BuildContext context) {
-    return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
+  static JsonSchemaLocalizations of(BuildContext context) {
+    return Localizations.of<JsonSchemaLocalizations>(
+        context, JsonSchemaLocalizations)!;
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<JsonSchemaLocalizations> delegate =
+      _JsonSchemaLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -287,13 +288,14 @@ abstract class AppLocalizations {
   String elseViolated(Object schemaPath, Object instance, Object elseSchema);
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
-  const _AppLocalizationsDelegate();
+class _JsonSchemaLocalizationsDelegate
+    extends LocalizationsDelegate<JsonSchemaLocalizations> {
+  const _JsonSchemaLocalizationsDelegate();
 
   @override
-  Future<AppLocalizations> load(Locale locale) {
-    return SynchronousFuture<AppLocalizations>(lookupAppLocalizations(locale));
+  Future<JsonSchemaLocalizations> load(Locale locale) {
+    return SynchronousFuture<JsonSchemaLocalizations>(
+        lookupJsonSchemaLocalizations(locale));
   }
 
   @override
@@ -301,18 +303,18 @@ class _AppLocalizationsDelegate
       <String>['en'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(_AppLocalizationsDelegate old) => false;
+  bool shouldReload(_JsonSchemaLocalizationsDelegate old) => false;
 }
 
-AppLocalizations lookupAppLocalizations(Locale locale) {
+JsonSchemaLocalizations lookupJsonSchemaLocalizations(Locale locale) {
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'en':
-      return AppLocalizationsEn();
+      return JsonSchemaLocalizationsEn();
   }
 
   throw FlutterError(
-      'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+      'JsonSchemaLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
       'an issue with the localizations generation tool. Please file an issue '
       'on GitHub with a reproducible sample app and the gen-l10n configuration '
       'that was used.');

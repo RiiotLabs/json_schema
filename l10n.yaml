@@ -4,3 +4,4 @@ output-localization-file: localizations.dart
 nullable-getter: false
 synthetic-package: false
 output-dir: lib/src/l10n/generated
+output-class: JsonSchemaLocalizations

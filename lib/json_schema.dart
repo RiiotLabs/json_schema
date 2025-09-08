@@ -45,3 +45,4 @@ export 'package:json_schema/src/json_schema/models/schema_version.dart' show Sch
 export 'package:json_schema/src/json_schema/models/validation_context.dart' show ValidationContext;
 export 'package:json_schema/src/json_schema/models/validation_results.dart' show ValidationResults;
 export 'package:json_schema/src/json_schema/validator.dart' show Validator, ValidationError;
+export 'package:json_schema/src/json_schema/validator_messages.dart' show ValidatorMessages;

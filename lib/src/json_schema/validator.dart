@@ -74,8 +74,10 @@ class ValidationError {
 
 /// Initialized with schema, validates instances against it
 class Validator {
+  static ValidatorMessages defaultMessages = ValidatorMessages.englishMessages;
+
   Validator(this._rootSchema, {ValidatorMessages? messages}):
-        _messages = messages ?? ValidatorMessages.defaultMessages;
+        _messages = messages ?? defaultMessages;
 
   /// A private constructor for recursive validations.
   /// [inEvaluatedItemsContext] and [inEvaluatedPropertiesContext] are used to pass in the parents context state.
@@ -84,7 +86,7 @@ class Validator {
       bool inEvaluatedPropertiesContext = false,
       Map<JsonSchema, JsonSchema>? initialDynamicParents,
         ValidatorMessages? messages}):
-        _messages = messages ?? ValidatorMessages.defaultMessages {
+        _messages = messages ?? defaultMessages {
     if (inEvaluatedItemsContext != null) {
       _pushEvaluatedItemsContext(inEvaluatedItemsContext.length);
     }
@@ -492,7 +494,7 @@ class Validator {
   }
 
   void _validateNot(JsonSchema schema, Instance instance) {
-    if (Validator(schema.notSchema).validate(instance).isValid) {
+    if (Validator(schema.notSchema, messages: _messages).validate(instance).isValid) {
       _err(_messages.notViolated(schema.notSchema!.path!), instance.path, schema.notSchema!.path!);
     }
   }
