@@ -77,7 +77,7 @@ class Validator {
   static ValidatorMessages defaultMessages = ValidatorMessages.englishMessages;
 
   Validator(this._rootSchema, {ValidatorMessages? messages}):
-        _messages = messages ?? defaultMessages;
+        _overrideMessages = messages;
 
   /// A private constructor for recursive validations.
   /// [inEvaluatedItemsContext] and [inEvaluatedPropertiesContext] are used to pass in the parents context state.
@@ -86,7 +86,7 @@ class Validator {
       bool inEvaluatedPropertiesContext = false,
       Map<JsonSchema, JsonSchema>? initialDynamicParents,
         ValidatorMessages? messages}):
-        _messages = messages ?? defaultMessages {
+        _overrideMessages = messages {
     if (inEvaluatedItemsContext != null) {
       _pushEvaluatedItemsContext(inEvaluatedItemsContext.length);
     }
@@ -98,7 +98,8 @@ class Validator {
     }
   }
 
-  final ValidatorMessages _messages;
+  final ValidatorMessages? _overrideMessages;
+  ValidatorMessages get _messages => _overrideMessages ?? defaultMessages;
 
   late bool _validateFormats;
 
